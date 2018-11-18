@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Generator: Gravit.io -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 400 400" width="400" height="400">
+<defs>
+<clipPath id="_clipPath_dGHL1Pw4DR63CRFNfUe5hlT89Ma8wuNG">
+<rect width="400" height="400"/>
+</clipPath>
+</defs>
+<g clip-path="url(#_clipPath_dGHL1Pw4DR63CRFNfUe5hlT89Ma8wuNG)">
+<rect width="400" height="400" style="fill:rgb(0,0,0)"/>
+<rect x="150" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="50" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="50" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="50" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="300" y="100" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="100" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="100" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="100" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="100" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<g>
+<path d=" M 296 338 L 155 338 Q 169.941 233 164.717 139.273 C 161.911 88.937 294.416 89.467 287.281 139.273 Q 278.153 203 296 338 Z " fill="rgb(255,99,61)"/>
+<path d=" M 296 338 L 225.999 338 L 225.999 139.273 Q 291.021 115.327 287.281 139.273 Q 276.237 210 296 338 Z " fill="rgb(231,0,33)"/>
+<path d=" M 286.238 115.305 L 165.762 115.305 C 166.973 79.621 193.529 51 225.999 51 C 258.469 51 285.027 79.621 286.238 115.305 Z " fill="rgb(223,205,189)"/>
+<path d=" M 286.238 115.305 L 225.999 115.305 L 225.999 51 C 258.469 51 285.027 79.621 286.238 115.305 Z " fill="rgb(200,173,146)"/>
+<path d=" M 136 105.264 L 316 105.264 L 316 145.264 L 136 145.264 L 136 105.264 Z " fill="rgb(255,196,115)"/>
+<g>
+<path d=" M 273.615 306.607 L 178.385 306.607 L 184.958 236.78 L 186.95 234.651 C 187.511 234.058 192.647 228.733 200.426 225.972 C 203.503 224.879 206.586 224.336 209.624 224.336 C 215.339 224.336 220.894 226.252 225.999 229.992 C 227.8 231.308 229.546 232.854 231.221 234.625 C 243.167 247.257 254.711 239.648 256.068 238.674 L 266.482 230.872 L 273.615 306.607 Z " fill="rgb(240,231,223)"/>
+<path d=" M 191.945 174.294 L 206.703 174.294 L 206.703 190.673 L 191.945 190.673 L 191.945 174.294 Z " fill="rgb(240,231,223)"/>
+<path d=" M 211.244 196.74 L 225.999 196.74 L 225.999 213.121 L 211.244 213.121 L 211.244 196.74 Z " fill="rgb(240,231,223)"/>
+</g>
+<path d=" M 206.703 264.43 L 221.46 264.43 L 221.46 280.811 L 206.703 280.811 L 206.703 264.43 Z " fill="rgb(236,236,236)"/>
+<path d=" M 266.482 230.872 L 273.615 306.607 L 225.999 306.607 L 225.999 229.992 C 227.8 231.308 229.546 232.854 231.221 234.625 C 243.167 247.257 254.711 239.648 256.068 238.674 L 266.482 230.872 Z " fill="rgb(223,205,189)"/>
+<path d=" M 225.999 105.264 L 316 105.264 L 316 145.264 L 225.999 145.264 L 225.999 105.264 Z " fill="rgb(255,183,79)"/>
+</g>
+</g>
+</svg>

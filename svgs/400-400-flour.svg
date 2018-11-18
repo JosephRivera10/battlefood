@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Generator: Gravit.io -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 400 400" width="400" height="400">
+<defs>
+<clipPath id="_clipPath_ouBexBZ1S5KiD8fhmC4WuzrEcaqSzYRr">
+<rect width="400" height="400"/>
+</clipPath>
+</defs>
+<g clip-path="url(#_clipPath_ouBexBZ1S5KiD8fhmC4WuzrEcaqSzYRr)">
+<rect width="400" height="400" style="fill:rgb(0,0,0)"/>
+<rect x="50" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="300" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="50" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="300" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="100" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="100" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="250" y="100" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="100" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<g>
+<g>
+<path d=" M 199.531 104 C 152.937 108.3 127.049 155.986 127.049 155.986 L 199.531 155.986 L 272.012 155.986 C 272.012 155.986 246.124 108.3 199.531 104 Z " fill="rgb(230,230,230)"/>
+<path d=" M 319.856 323.05 L 296 313 C 296.005 312.06 296.105 305.649 296 304.694 L 290.178 188.428 L 252.657 193.942 C 226.724 197.751 168.693 197.681 142.805 193.732 L 110.888 188.868 L 107.309 296 C 107.209 296.915 107.309 312.1 107.309 313 L 84.144 323.045 C 79.226 327.963 83.4 336.306 90.283 335.326 L 117.461 331.442 C 117.931 331.577 118.366 331.782 118.851 331.892 C 171.747 343.649 226.549 343.954 279.581 332.787 L 284.749 331.697 C 285.144 331.612 285.494 331.447 285.879 331.347 L 313.722 335.326 C 320.6 336.311 324.774 327.963 319.856 323.05 Z " fill="rgb(175,135,92)"/>
+<circle vector-effect="non-scaling-stroke" cx="226.35384985085153" cy="135.32642912144604" r="5.668584625559873" fill="rgb(255,255,255)"/>
+<path d=" M 299.133 188.318 L 257.869 193.937 C 229.899 197.746 167.312 197.676 139.391 193.727 L 101.108 188.313 C 95.043 188.313 90.126 185.254 90.126 181.48 L 90.126 180.485 C 90.126 168.183 106.16 155.981 125.935 155.981 L 274.318 155.981 C 294.093 155.981 310.126 168.183 310.126 180.485 L 310.126 181.48 C 310.121 185.259 305.204 188.318 299.133 188.318 Z " fill="rgb(150,104,59)"/>
+<circle vector-effect="non-scaling-stroke" cx="192.35733835311535" cy="135.32642912144604" r="5.668584625559873" fill="rgb(255,255,255)"/>
+<circle vector-effect="non-scaling-stroke" cx="209.35809347792073" cy="123.99425862220068" r="5.668584625559873" fill="rgb(255,255,255)"/>
+<path d=" M 196.076 293.067 L 183.625 293.067 C 168.878 293.067 156.921 281.11 156.921 266.364 L 156.921 253.912 L 169.373 253.912 C 184.119 253.912 196.076 265.869 196.076 280.615 L 196.076 293.067 Z " fill="rgb(249,215,11)"/>
+<path d=" M 213.482 293.067 L 225.934 293.067 C 240.68 293.067 252.637 281.11 252.637 266.364 L 252.637 253.912 L 240.185 253.912 C 225.439 253.912 213.482 265.869 213.482 280.615 L 213.482 293.067 Z " fill="rgb(249,215,11)"/>
+<path d=" M 204.744 273.492 L 213.552 264.684 C 223.979 254.257 223.979 237.351 213.552 226.924 L 204.744 218.116 L 195.936 226.924 C 185.509 237.351 185.509 254.257 195.936 264.684 L 204.744 273.492 Z " fill="rgb(249,215,11)"/>
+</g>
+</g>
+</g>
+</svg>

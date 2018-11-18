@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Generator: Gravit.io -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 400 400" width="400" height="400">
+<defs>
+<clipPath id="_clipPath_aRCySQE8NuYuyPozYxgPa7cjd6xYc7Yu">
+<rect width="400" height="400"/>
+</clipPath>
+</defs>
+<g clip-path="url(#_clipPath_aRCySQE8NuYuyPozYxgPa7cjd6xYc7Yu)">
+<rect width="400" height="400" style="fill:rgb(0,0,0)"/>
+<rect x="150" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="150" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="300" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="100" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="250" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="200" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<rect x="150" y="200" width="50" height="50" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+<g>
+<ellipse vector-effect="non-scaling-stroke" cx="172.4663941141346" cy="330.78129119348034" rx="62.28444248725012" ry="15.102068344431814" fill="rgb(151,168,170)"/>
+<path d=" M 234.751 330.79 C 234.751 339.135 206.865 345.892 172.466 345.892 C 138.067 345.892 110.185 339.135 110.185 330.79" fill="rgb(174,185,186)"/>
+<path d=" M 242.938 266.618 C 242.938 305.544 211.396 337.096 172.466 337.096 C 133.561 337.096 102.003 305.544 102.003 266.618 C 102 227.7 133.558 155.892 172.466 155.892 C 211.396 155.892 242.938 227.7 242.938 266.618 Z " fill="rgb(232,178,119)"/>
+<path d=" M 102 266.618 C 102 227.7 133.558 155.892 172.466 155.892" fill="rgb(239,191,139)"/>
+<path d=" M 172.466 155.892 C 211.396 155.892 242.938 227.7 242.938 266.618 C 242.938 305.544 211.396 337.096 172.466 337.096" fill="rgb(216,158,96)"/>
+</g>
+</g>
+</svg>
