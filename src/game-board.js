@@ -1,9 +1,9 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import "@polymer/iron-icons/iron-icons.js";
-import "../src/game-icons.js";
-import "../src/game-tile.js";
+import "./game-icons.js";
+import "./game-tile.js";
 
-import { foodTiles, foods, recipes } from "../src/game-foods.js";
+import { foodTiles, foods, recipes } from "./game-foods.js";
 
 class GameBoard extends PolymerElement {
   static get properties() {
