@@ -39,13 +39,21 @@ $ polymer serve
 
 In your browser, go to http://localhost:8000/.
 
+To build a release version, run:
+
+```bash
+$ npm run build
+```
+
+The code will then exist in the `docs` folder.
+
 ## File Layout
 
 Except for `index.html`, all of the game logic is in the `src` folder -- and mostly in the `game-board.js` file. `game-foods.js` contains data on the parts used in the game. `game-icons.js` provides a set of icons to be used by `iron-icon` for the game. And, `game-tile.js` is the component used to display a single tile on the board.
 
 The `docs` folder contains a build of the game used at the GitHub pages [http://straley.net/battlefood](http://straley.net/battlefood) page. The `readme` folder contains any assets used in this readme.
 
-`build` and `node_modules` should exist locally in your development environment (after you're run `npm` and built the code).
+`node_modules` should exist locally in your development environment (after you're run `npm` and built the code). A `build` directory will exist briefly during the build process before the bundle is moved into the `docs` folder.
 
 ## Game Play
 
