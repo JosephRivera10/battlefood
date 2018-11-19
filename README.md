@@ -2,6 +2,8 @@
 
 Battlefood is a concept game to help understand Polymer 3 better. Feel free to clone it and work on adding features, optimizing the code, or just expanding the game. [Polymer 3](https://www.polymer-project.org/) and [lit-html](https://lit-html.polymer-project.org/) are new technologies and are under constant development. Some of the code in this project may not adhere to current best practices.
 
+This project is covered under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://github.com/straley/battlefood/blob/master/LICENSE.md). Rights are granted for personal use. You are not permitted to use this code commerically, nor are you allowed to produce and share derivative work. (You may work on it locally, but your repositories must be private.)
+
 ![alt text](https://github.com/straley/battlefood/blob/master/readme/gameplay.png?raw=true "Example Game")
 
 You can preview the game at http://straley.net/battlefood.
