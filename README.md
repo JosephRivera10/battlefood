@@ -73,10 +73,12 @@ Feel free to try one of the exercises below to learn more about Polymer by enhan
 
 ### Front-End Opportunities
 
-1. The game looks horrible on mobile devices or smaller screens. Optimize the CSS with media queries.
+1. The game looks horrible on mobile devices or smaller screens. Optimize the CSS with media queries. Also, add a nice title at the top of the screen, center the contents, and prevent scrolling.
 2. Players like to see their names. Enhance the modal dialog to ask for the player's name. Then store that name and their scores using Local Storage. Display a high score modal when the game is not being played.
-3. Add a timer to the game. Give them a set about of time to finish making the dish. And, increase the bonuses based upon how much time is on the close.
-4. Spice things up with animations. Show the coins flying from the board each time they earn some. Show the cards flipping. Animate the modal dialog. Animate the foods in the recipe bar have been found.
+3. Make the game more interesting by adding some choices before the game starts. These should include choosing the board size, the maximum recipe size, the number of spoilers, etc.
+4. If you've added more recipes or added the options above, then you may notice that the code can deadlock if it can't find a board configuration that will fit. Build in some protection against this. And, while you're at it, try adding some tests in [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
+5. Add a timer to the game. Give them a set about of time to finish making the dish. And, increase the bonuses based upon how much time is on the close.
+6. Spice things up with animations. Show the coins flying from the board each time they earn some. Show the cards flipping. Animate the modal dialog. Animate the foods in the recipe bar have been found.
 
 ### Back-End Opportunities
 
