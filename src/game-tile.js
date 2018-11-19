@@ -1,6 +1,8 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import "@polymer/iron-icon/iron-icon.js";
 
+// the individual clickable tiles for the game
+
 class GameTile extends PolymerElement {
   static get properties() {
     return {
@@ -11,6 +13,7 @@ class GameTile extends PolymerElement {
         type: String,
         reflectToAttribute: true
       },
+      icon: String,
       food: String,
       onhit: Function
     };
@@ -33,7 +36,7 @@ class GameTile extends PolymerElement {
         }
       </style>
       <iron-icon
-        icon="tile:[[icon]]"
+        icon="game:[[icon]]"
         role="img"
         class="tile"
         style="top: calc([[x]] * var(--game-tile-size)); left: calc([[y]] * var(--game-tile-size));"
@@ -43,7 +46,7 @@ class GameTile extends PolymerElement {
 
   constructor() {
     super();
-    this.icon = "unflipped";
+    // this.icon = "unflipped";
     this.addEventListener("click", () => this.click());
   }
 
@@ -63,11 +66,18 @@ class GameTile extends PolymerElement {
       );
       return;
     }
+
+    this.dispatchEvent(
+      new CustomEvent("nohit", {
+        bubbles: true,
+        composed: true,
+        detail: { tile: this }
+      })
+    );
     this.state = "flipped";
   }
 
   flip() {
-    console.log("HERE", this);
     this.state = "flipped";
   }
 }
