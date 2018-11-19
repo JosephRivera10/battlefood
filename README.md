@@ -81,6 +81,7 @@ Feel free to try one of the exercises below to learn more about Polymer by enhan
 4. If you've added more recipes or added the options above, then you may notice that the code can deadlock if it can't find a board configuration that will fit. Build in some protection against this. And, while you're at it, try adding some tests in [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
 5. Add a timer to the game. Give the player a set amount of time to finish making the dish. And, increase the bonuses based upon how much time is on the close.
 6. Spice things up with animations. Show the coins flying from the board each time they earn some. Show the cards flipping. Animate the modal dialog. Animate the foods in the recipe bar have been found.
+7. Add a training mode that walks players through how to play. Use callouts and arrows to help direct the player.
 
 ### Back-End Opportunities
 
