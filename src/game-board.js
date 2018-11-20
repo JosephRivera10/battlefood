@@ -30,8 +30,8 @@ class GameBoard extends PolymerElement {
     return html`
       <style>
         #game {
-          display: block;
-          width: 100%;
+          display: flex;
+          justify-content: center;
           position: relative;
         }
 
@@ -158,6 +158,25 @@ class GameBoard extends PolymerElement {
 
         #modal .content button:hover {
           background-color: #f8efb0;
+        }
+
+        @media screen and (max-width: 825px) {
+          #game {
+            flex-direction: column-reverse
+          }
+          #sidebar {
+            display: flex;  
+          }
+  
+          .panel {
+            width: auto;
+            display: flex;
+            text-align: center;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            padding: 0 0 10px 0;
+            margin: 0 0 5px 0;
+          }
         }
 
 

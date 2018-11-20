@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script type="module" src="./src/game-board.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <custom-style>
       <style>
+        /* html, body {margin: 0; height: 100%; overflow: hidden} */
+
+        #header {
+          background-color: #f1f1f1;
+          padding: 10px;
+          margin-bottom: 15px;
+          text-align: center;
+          width: 100%;
+        }
         body {
           background-color: #999;
-          margin: 0;
           padding: 0;
+          margin: 0;
+        }
+        body.noScroll {
+          overflow: hidden;
         }
         #footer {
           position: fixed;
@@ -67,6 +81,9 @@
     </custom-style>
   </head>
   <body>
+    <header id="header">
+      <h1>Battlefood</h1>
+    </header>
     <game-board></game-board>
     <div id="footer">
       <p>
