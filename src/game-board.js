@@ -49,11 +49,13 @@ class GameBoard extends PolymerElement {
         #title {
           float: left;
           margin-left: 15px;
+          color: #4c6d78;
         }
 
         #playerInfo {
           float: right;
           margin-right: 200px;
+          color: #4c6d78;
         }
 
         #game {
@@ -237,8 +239,8 @@ class GameBoard extends PolymerElement {
           }
           #sidebar {
             display: flex; 
-            flex-direction: column; 
             width: auto;
+            flex-wrap: wrap;
           }
           .panel {
             width: auto;
@@ -268,6 +270,9 @@ class GameBoard extends PolymerElement {
           #game {
             --game-tile-size: 28px;
           }
+        }
+        @media screen and (max-width: 640px) {
+
         }
         @media screen and (max-width: 625px) { 
           #title {
