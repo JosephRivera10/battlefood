@@ -2,6 +2,13 @@ import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import "@polymer/iron-icons/iron-icons.js";
 import "./game-icons.js";
 import "./game-tile.js";
+import '@polymer/polymer/lib/elements/dom-if.js';
+import '@polymer/iron-form/iron-form.js';
+import '@polymer/paper-checkbox/paper-checkbox.js';
+import '@polymer/paper-button/paper-button.js';
+import '@polymer/paper-input/paper-input.js';
+
+
 
 import { foodTiles, foods, recipes } from "./game-foods.js";
 
@@ -22,13 +29,33 @@ class GameBoard extends PolymerElement {
       modalMessage: String,
       modalButton: String,
       modalVisible: Boolean,
-      modalClick: Function
+      modalClick: Function,
+      coinVisible: Boolean,
+      playerName: String,
+      winCount: Number
     };
   }
 
   static get template() {
     return html`
-      <style>
+      <style is="custom-style">
+        #header {
+          display: inline-block;
+          background-color: #f1f1f1;
+          margin-bottom: 15px;
+          width: 100%;
+        }
+
+        #title {
+          float: left;
+          margin-left: 15px;
+        }
+
+        #playerInfo {
+          float: right;
+          margin-right: 200px;
+        }
+
         #game {
           display: flex;
           justify-content: center;
@@ -100,6 +127,7 @@ class GameBoard extends PolymerElement {
         .board {
           display: inline-block;
           position: relative;
+          margin-right: 5px;
         }
 
         #modal {
@@ -111,7 +139,32 @@ class GameBoard extends PolymerElement {
           height: 100%;
           overflow: auto;
           background-color: rgb(0,0,0); 
-          background-color: rgba(0,0,0,0.4); 
+          background-color: rgba(0,0,0,0.4);
+          animation: popup 1s; 
+        }
+
+        @keyframes popup {
+          0%{
+            transform: scale(1);
+          }
+          50%{
+            transform: scale(1.4);
+          }
+          60%{
+            transform: scale(1.1);
+          }
+          70%{
+            transform: scale(1.2);
+          }
+          80%{
+            transform: scale(1);
+          }
+          90%{
+            transform: scale(1.1);
+          }
+          100%{
+            transform: scale(1);
+          }
         }
 
         #modal .content {
@@ -160,14 +213,33 @@ class GameBoard extends PolymerElement {
           background-color: #f8efb0;
         }
 
+        .coinAnimate{
+          position: relative;
+          -webkit-animation: fadeInOut 4s;
+          animation: fadeInOut 4s;
+          opacity: 0;
+        }
+
+        @-webkit-keyframes fadeInOut {
+          0% { opacity: 0; left:0px; top:0px;}
+          50% { opacity: 1; left:200px; top:0px;}
+          100% {opacity: 0; left:200px; top:0px;}
+        }
+        @keyframes fadeIn {
+          0% { opacity: 0; left:0px; top:0px;}
+          50% { opacity: 1; left:200px; top:0px;}
+          100% {opacity: 0; left:200px; top:0px;}
+        }
+
         @media screen and (max-width: 825px) {
           #game {
             flex-direction: column-reverse
           }
           #sidebar {
-            display: flex;  
+            display: flex; 
+            flex-direction: column; 
+            width: auto;
           }
-  
           .panel {
             width: auto;
             display: flex;
@@ -175,14 +247,76 @@ class GameBoard extends PolymerElement {
             background-color: #f8f8f8;
             border-radius: 5px;
             padding: 0 0 10px 0;
-            margin: 0 0 5px 0;
+            margin: 0 5px 5px 5px;
+          }
+          .board {
+            margin-left: 5px;
+          }
+          .coins {
+            margin-left: 5px;
+            margin-right: 5px;
+          }
+          .header {
+            width: auto;
+            margin: 5px;
+          }
+          .ingredient {
+            margin-left: 0px;
+          }
+        }
+        @media screen and (max-width: 675px) {
+          #game {
+            --game-tile-size: 28px;
+          }
+        }
+        @media screen and (max-width: 625px) { 
+          #title {
+            float: none;
+            margin-left: 15px;
+          }
+          #playerInfo {
+            float: none;
+            margin-right: 0px;
+            margin-left: 15px;
+          }
+          .food {
+            --iron-icon-height: calc(var(--game-tile-size) * 6);
+            --iron-icon-width: calc(var(--game-tile-size) * 6);
+          }
+        }
+        @media screen and (max-width: 590px) {
+          #game {
+            --game-tile-size: 26px;
+          }
+          .food {
+            --iron-icon-height: calc(var(--game-tile-size) * 6);
+            --iron-icon-width: calc(var(--game-tile-size) * 6);
           }
         }
 
 
+
       </style>
+      <header id="header">
+        <h1 id="title">Battlefood</h1>
+        <div id="playerInfo">
+          <h2>Hi [[playerName]]</h2>
+          <h2>High Score: [[winCount]]</h2>
+        </div>
+      </header>
 
       <game-icons></game-icons>
+
+      <template is="dom-if" if="{{coinVisible}}">
+        <div class="coinAnimate">
+          <iron-icon
+            icon="game:coins"
+            role="img"
+            class="coins"
+          ></iron-icon>
+        </div>
+      </template>
+ 
       <div id="game">
         <div class="board" style="width:[[boardWidth]]px; height:[[boardHeight]]px;">
 
@@ -235,13 +369,18 @@ class GameBoard extends PolymerElement {
       </div>
       <div id="modal" hidden$="[[!modalVisible]]">
         <div class="content">
-          <iron-icon
+        <iron-form id="form1">
+          <form method="get" action="/foo">
+          <paper-input type="text" name="name" required label="Name" value="Batman" placeholder="Who is Playing?"></paper-input>
+            <iron-icon
             icon="[[modalIcon]]"
             role="img"
             class="modal-icon"
-          ></iron-icon>            
-          <div>[[modalMessage]]</div>
-          <button id="modal-button" type="button" on-click="handleModalClick">[[modalButton]]</button>
+            ></iron-icon>            
+            <div>[[modalMessage]]</div>
+            <button id="modal-button" type="submit" on-click="handleModalClick">[[modalButton]]</button>
+          </form>
+        </iron-form>
         </div>
       </div>
     `;
@@ -258,6 +397,7 @@ class GameBoard extends PolymerElement {
     this.boardWidth = this.boardSize * this.tileSize;
     this.boardHeight = this.boardSize * this.tileSize;
     this.numberOfFoodsToPlace = 8;
+    this.winCount = 0;
 
     // update the cssvar "--game-tile-size"
     this.updateStyles({ "--game-tile-size": `${this.tileSize}px` });
@@ -265,6 +405,9 @@ class GameBoard extends PolymerElement {
 
     // play game
     this.resetGame();
+
+    //local storage
+    this.playerName = localStorage.getItem("savedName");
   }
 
   resetGame() {
@@ -410,9 +553,12 @@ class GameBoard extends PolymerElement {
     );
   }
 
+ 
+
   tileHit(e) {
     const tile = e.detail && e.detail.tile;
     if (tile) {
+      this.coinVisible = true;      
       this.coins += 1;
       const food = this.foodsPlaced[tile.food];
       food.tiles.push(tile);
@@ -479,6 +625,8 @@ class GameBoard extends PolymerElement {
     }
 
     if (this.gameState === "win") {
+      this.winCount += 1;
+      localStorage.setItem("savedWins", this.winCount);
       this.showModal(
         "game:coins",
         `Congratulations!  You Won with ${this.coins} coins!`,
@@ -497,9 +645,18 @@ class GameBoard extends PolymerElement {
     this.modalButton = button;
     this.modalClick = onclose;
     this.modalVisible = true;
+  
   }
 
   handleModalClick(e) {
+
+    const form = this.$['form1'];
+    form.addEventListener('iron-form-submit', function(event){
+      this.playerName = event.detail.name;
+      localStorage.setItem("savedName", this.playerName);
+    })
+  
+
     if (typeof this.modalClick === "function") {
       this.modalClick();
     }
