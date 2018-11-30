@@ -31,8 +31,20 @@ class GameBoard extends PolymerElement {
       modalVisible: Boolean,
       modalClick: Function,
       coinVisible: Boolean,
-      playerName: String,
-      winCount: Number
+      playerName: {
+        type: String,
+        notify: true,
+      },
+      winCount: Number,
+      pauseModalVisible: {
+        type: Boolean,
+        value: false,
+      },
+      countDown: Number,
+      isPaused: {
+        type: Boolean,
+        value: false,
+      }
     };
   }
 
@@ -64,6 +76,29 @@ class GameBoard extends PolymerElement {
           position: relative;
         }
 
+        game-tile[state=hit || flipped] {
+          background-color: blue;
+        }
+
+        #pause {
+          margin-bottom: 5px;
+          border-radius: 5px;
+          border-color: #f8f8f8;
+          background-color: #f8f8f8;
+          color: #15616e;
+          border-style: none;
+          cursor: pointer;
+          transition-duration: 1s;
+          -webkit-transition-duration: 1s;
+        }
+
+        #pause:hover {
+          color: #f8f8f8;
+          boder-color: #15616e;
+          background-color: #15616e;
+          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
         .food {
           display: block;
           position: absolute;
@@ -76,6 +111,17 @@ class GameBoard extends PolymerElement {
           position: relative;
           width: 140px;
           vertical-align: top;
+        }
+
+        #timer {
+          width: fit-content;
+          background-color: #f8f8f8;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 0 0 5px 0;
+          color: #15616e;
+          align-items: flex-start;
+          text-align: center;
         }
 
         .panel {
@@ -241,6 +287,13 @@ class GameBoard extends PolymerElement {
             display: flex; 
             width: auto;
             flex-wrap: wrap;
+            align-items: center;
+          }
+          #timer {
+            margin-left: 5px;
+          }
+          #pause {
+            margin-left: 5px;
           }
           .panel {
             width: auto;
@@ -298,10 +351,8 @@ class GameBoard extends PolymerElement {
             --iron-icon-width: calc(var(--game-tile-size) * 6);
           }
         }
-
-
-
       </style>
+
       <header id="header">
         <h1 id="title">Battlefood</h1>
         <div id="playerInfo">
@@ -346,14 +397,19 @@ class GameBoard extends PolymerElement {
 
         </div>
         <div id="sidebar">
+          <div id="timer">[[countDown]]</div>
+          <div>
+            <button id="pause" type="button" on-click="handlePauseClick">
+              <iron-icon icon="pause:pause-circle-outline"></iron-icon>
+            </button>
+          </div>
           <div class="panel">
             <div class="header">
               <iron-icon
-                  icon="game:coins"
-                  role="img"
-                  class="coins"
-                ></iron-icon>            
-              
+                icon="game:coins"
+                role="img"
+                class="coins"
+              ></iron-icon>            
               <h3>[[coins]]</h3>
             </div>
           </div>
@@ -388,6 +444,18 @@ class GameBoard extends PolymerElement {
         </iron-form>
         </div>
       </div>
+
+      <div id="modal" hidden$="[[!pauseModalVisible]]">
+        <div class="content">
+            <iron-icon
+            icon="[[modalIcon]]"
+            role="img"
+            class="modal-icon"
+            ></iron-icon>            
+            <div>[[modalMessage]]</div>
+            <button id="modal-button" type="button" on-click="handleModalPauseClick">[[modalButton]]</button>
+        </div>
+      </div>
     `;
   }
 
@@ -410,12 +478,10 @@ class GameBoard extends PolymerElement {
 
     // play game
     this.resetGame();
-
-    //local storage
-    this.playerName = localStorage.getItem("savedName");
   }
 
   resetGame() {
+    this.countDown = 60;
     this.found = 0;
     this.coins = 20;
     this.gameState = "initializing";
@@ -576,6 +642,7 @@ class GameBoard extends PolymerElement {
           this.gameLoseReason = `${foods[tile.food].name} is not in your recipe.`;
           this.coins = 0;
           this.nextTurn();
+
           return;
         }
         this.found++;
@@ -650,22 +717,64 @@ class GameBoard extends PolymerElement {
     this.modalButton = button;
     this.modalClick = onclose;
     this.modalVisible = true;
-  
+  }
+
+  showModalPause(icon, message, button, onclose) {
+    this.modalIcon = icon;
+    this.modalMessage = message;
+    this.modalButton = button;
+    this.modalClick = onclose;
+    this.pauseModalVisible = true;
   }
 
   handleModalClick(e) {
-
+    this.interval = setInterval(() => {
+      if(!this.isPaused){
+        this.tick();
+      }
+    }, 1000);
     const form = this.$['form1'];
-    form.addEventListener('iron-form-submit', function(event){
-      this.playerName = event.detail.name;
+    form.addEventListener('iron-form-submit', event=>{
+      let locallyStoredName = localStorage.getItem("savedName");
+      //to show local storage works
+      // this.playerName = locallyStoredName;
+      this.playerName = event.detail.name ? event.detail.name :  locallyStoredName;
       localStorage.setItem("savedName", this.playerName);
     })
-  
-
     if (typeof this.modalClick === "function") {
       this.modalClick();
     }
     this.modalVisible = false;
+  }
+
+  handlePauseClick(e) {
+    this.isPaused = true;
+    this.showModalPause(
+      "game:coins",
+      `HighScore: ${this.winCount}`,
+      "Keep Playing?"
+    )
+  }
+  
+  handleModalPauseClick(e) {
+    this.isPaused = false;
+    if (typeof this.modalClick === "function") {
+      this.modalClick();
+    }
+    this.pauseModalVisible = false;
+  }
+
+  tick() {
+    this.countDown--;
+    if (this.countDown <= 0){
+      clearInterval(this.interval);
+      this.countDown = 60;
+      this.gameState = "lose";
+      this.showModal("game:lose", this.gameLoseReason, "Play Again?", () => {
+        this.resetGame();
+      });
+      return;
+    }
   }
 
   ready() {
@@ -673,5 +782,6 @@ class GameBoard extends PolymerElement {
     this.addEventListener("hit", this.tileHit);
     this.addEventListener("nohit", this.tileNoHit);
   }
+
 }
 customElements.define("game-board", GameBoard);
